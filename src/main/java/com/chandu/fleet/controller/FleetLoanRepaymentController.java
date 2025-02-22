@@ -36,4 +36,9 @@ public class FleetLoanRepaymentController {
     public List<FleetLoanRepayment> getRepaymentHistory(@PathVariable Long loanId) {
         return fleetLoanRepaymentService.getRepayments(loanId);
     }
+    
+    @GetMapping("repayment")
+    public String homePage() {
+    	return "Welcome to Loan Repayment Page";
+    }
 }
