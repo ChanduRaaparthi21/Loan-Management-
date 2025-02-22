@@ -1,7 +1,21 @@
 package com.chandu.fleet.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "fleet_loans")
@@ -16,26 +30,37 @@ public class FleetLoan {
     private Long id;
 
     @Column(nullable = false)
-    private String accountNumber;  // Must exist in BankAccount
+    private String accountNumber;  
 
     @Column(nullable = false)
     private Double loanAmount;
 
     @Column(nullable = false)
-    private Integer loanTerm; // Loan duration in months
+    private Integer loanTerm; // Months
 
     @Column(nullable = false)
     private Double interestRate;
 
     @Column(nullable = false)
-    private String vehicleDetails; // E.g., "Fleet of 10 trucks"
+    private String vehicleDetails;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private LoanStatus status; // PENDING, APPROVED, REJECTED
+    private LoanStatus status;
+
+    @Column(nullable = false)
+    private Double remainingBalance; // NEW: To track balance after payments
+
+    @Column(name = "monthly_emi", nullable = false)// NEW: Pre-calculated EMI
+    private Double monthlyEmi;
+
+ 
+
+    @OneToMany(mappedBy = "fleetLoan", cascade = CascadeType.ALL)
+    private List<FleetLoanRepayment> repayments; // NEW: Track repayments
 
     public enum LoanStatus {
-        PENDING, APPROVED, REJECTED
+        PENDING, APPROVED, REJECTED, CLOSED
     }
 
 	public Long getId() {
@@ -94,8 +119,33 @@ public class FleetLoan {
 		this.status = status;
 	}
 
+	public Double getRemainingBalance() {
+		return remainingBalance;
+	}
+
+	public void setRemainingBalance(Double remainingBalance) {
+		this.remainingBalance = remainingBalance;
+	}
+
+	public Double getMonthlyEMI() {
+		return monthlyEmi;
+	}
+
+	public void setMonthlyEMI(Double monthlyEMI) {
+		this.monthlyEmi = monthlyEMI;
+	}
+
+	public List<FleetLoanRepayment> getRepayments() {
+		return repayments;
+	}
+
+	public void setRepayments(List<FleetLoanRepayment> repayments) {
+		this.repayments = repayments;
+	}
+
 	public FleetLoan(Long id, String accountNumber, Double loanAmount, Integer loanTerm, Double interestRate,
-			String vehicleDetails, LoanStatus status) {
+			String vehicleDetails, LoanStatus status, Double remainingBalance, Double monthlyEMI,
+			List<FleetLoanRepayment> repayments) {
 		super();
 		this.id = id;
 		this.accountNumber = accountNumber;
@@ -104,13 +154,15 @@ public class FleetLoan {
 		this.interestRate = interestRate;
 		this.vehicleDetails = vehicleDetails;
 		this.status = status;
+		this.remainingBalance = remainingBalance;
+		this.monthlyEmi = monthlyEMI;
+		this.repayments = repayments;
 	}
 
 	public FleetLoan() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-    
     
     
     

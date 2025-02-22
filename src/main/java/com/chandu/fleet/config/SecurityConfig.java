@@ -1,18 +1,24 @@
 package com.chandu.fleet.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.chandu.fleet.filter.JwtAuthFilter;
 import com.chandu.fleet.service.EmployeeInfoUserDetailsService;
 
 @Configuration
@@ -20,6 +26,10 @@ import com.chandu.fleet.service.EmployeeInfoUserDetailsService;
 @EnableMethodSecurity
 public class SecurityConfig {
 
+	@Autowired
+	private JwtAuthFilter authFilter;
+	
+	
     @Bean
     public UserDetailsService userDetailsService() {
         return new EmployeeInfoUserDetailsService();
@@ -30,7 +40,7 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable()) // ✅ Disable CSRF for testing
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/bank/hi", "/employee/register").permitAll() // ✅ Public access
+                        .requestMatchers("/bank/hi", "/employee/register","/api/fleet-loan/authenticate").permitAll() // ✅ Public access
                         .requestMatchers(HttpMethod.POST, "/bank/create-account").hasRole("ADMIN") // ✅ Only ADMIN can create
                         .requestMatchers("/bank/all-accounts").hasRole("ADMIN") // ✅ Only ADMIN can get all accounts
                         .requestMatchers("/bank/account/**").hasAnyRole("USER", "ADMIN") // ✅ USER & ADMIN can fetch accounts
@@ -38,15 +48,16 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/fleet-loan/user/**").hasRole("USER") // ✅ USER can view their loans
                         .requestMatchers(HttpMethod.PUT, "/api/fleet-loan/approve/**").hasRole("ADMIN") // ✅ ADMIN can approve fleet loan
                         .requestMatchers(HttpMethod.PUT, "/api/fleet-loan/reject/**").hasRole("ADMIN") // ✅ ADMIN can reject fleet loan
+                        .requestMatchers(HttpMethod.POST, "/fleet/repayments/pay/**").hasAnyRole("USER", "ADMIN") // ✅ Both can make repayments
+                        .requestMatchers(HttpMethod.GET, "/fleet/repayments/history/**").hasAnyRole("USER", "ADMIN") // ✅ Both can view repayment history
+
                         .anyRequest().authenticated() // ✅ Other requests require authentication
                 )
-                .authenticationProvider(authenticationProvider()) // ✅ Set authentication provider
-                .httpBasic(httpBasic -> {}) // ✅ Enable Basic Authentication (fix)
-                .formLogin(form -> form.disable()) // ❌ Disable default login form
-                .logout(logout -> logout
-                        .logoutSuccessUrl("/bank/hi") // ✅ Redirect after logout
-                        .permitAll()
-                )
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
@@ -61,5 +72,11 @@ public class SecurityConfig {
         daoAuthenticationProvider.setUserDetailsService(userDetailsService());
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
         return daoAuthenticationProvider;
+    }
+    
+    
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+    	return  configuration.getAuthenticationManager();
     }
 }
