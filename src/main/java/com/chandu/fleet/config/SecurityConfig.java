@@ -50,7 +50,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/fleet-loan/reject/**").hasRole("ADMIN") // ✅ ADMIN can reject fleet loan
                         .requestMatchers(HttpMethod.POST, "/fleet/repayments/pay/**").hasAnyRole("USER", "ADMIN") // ✅ Both can make repayments
                         .requestMatchers(HttpMethod.GET, "/fleet/repayments/history/**").hasAnyRole("USER", "ADMIN") // ✅ Both can view repayment history
-
+                        .requestMatchers(HttpMethod.GET, "/Hr/import").hasRole("ADMIN")
                         .anyRequest().authenticated() // ✅ Other requests require authentication
                 )
                 .sessionManagement()
