@@ -40,7 +40,7 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable()) // ✅ Disable CSRF for testing
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/bank/hi", "/employee/register","/api/fleet-loan/authenticate","/fleet/repayments/repayment").permitAll() // ✅ Public access
+                        .requestMatchers("/bank/hi", "/employee/register","/api/fleet-loan/authenticate","/fleet/repayments/repayment","/actuator/**").permitAll() // ✅ Public access
                         .requestMatchers(HttpMethod.POST, "/bank/create-account").hasRole("ADMIN") // ✅ Only ADMIN can create
                         .requestMatchers("/bank/all-accounts").hasRole("ADMIN") // ✅ Only ADMIN can get all accounts
                         .requestMatchers("/bank/account/**").hasAnyRole("USER", "ADMIN") // ✅ USER & ADMIN can fetch accounts
