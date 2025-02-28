@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import com.chandu.fleet.entity.BankAccount;
 import com.chandu.fleet.exception.BankAccountNotFound;
 import com.chandu.fleet.repository.BankAccountRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class BankAccountService {
