@@ -13,10 +13,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "bank_accounts")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class BankAccount {
 
     @Id

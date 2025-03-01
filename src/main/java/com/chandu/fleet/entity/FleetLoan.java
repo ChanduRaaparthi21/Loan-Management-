@@ -19,10 +19,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "fleet_loans")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class FleetLoan {
 
     @Id

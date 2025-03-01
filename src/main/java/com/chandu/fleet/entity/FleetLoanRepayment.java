@@ -7,10 +7,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "fleet_loan_repayments")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class FleetLoanRepayment {
 
     @Id
