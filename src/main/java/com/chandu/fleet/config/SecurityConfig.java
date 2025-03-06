@@ -40,10 +40,12 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable()) // ✅ Disable CSRF for testing
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/bank/hi", "/employee/register","/api/fleet-loan/authenticate","/fleet/repayments/repayment","/actuator/**").permitAll() // ✅ Public access
+                        .requestMatchers("/bank/hi","/bank/cacheData", "/employee/register","/api/fleet-loan/authenticate","/fleet/repayments/repayment","/actuator/**").permitAll() // ✅ Public access
                         .requestMatchers(HttpMethod.POST, "/bank/create-account").hasRole("ADMIN") // ✅ Only ADMIN can create
                         .requestMatchers("/bank/all-accounts").hasRole("ADMIN") // ✅ Only ADMIN can get all accounts
                         .requestMatchers("/bank/account/**").hasAnyRole("USER", "ADMIN") // ✅ USER & ADMIN can fetch accounts
+                        .requestMatchers(HttpMethod.PUT,"/account/update-account/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE,"/account/delete/{accountNumber}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/fleet-loan/apply").hasRole("USER") // ✅ USER can apply for fleet loan
                         .requestMatchers(HttpMethod.GET, "/api/fleet-loan/user/**").hasRole("USER") // ✅ USER can view their loans
                         .requestMatchers(HttpMethod.PUT, "/api/fleet-loan/approve/**").hasRole("ADMIN") // ✅ ADMIN can approve fleet loan
