@@ -1,431 +1,293 @@
-2025-03-01 15:11:50 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.12 with PID 7828 (C:\Users\chand\Desktop\Loan-Management-\target\classes started by chand in C:\Users\chand\Desktop\Loan-Management-)
-2025-03-01 15:11:50 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-01 15:11:50 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev2"
-2025-03-01 15:11:50 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-03-01 15:11:50 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-03-01 15:11:51 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 7 ms.
-2025-03-01 15:11:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-01 15:11:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
-2025-03-01 15:11:54 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-01 15:11:54 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-01 15:11:54 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-01 15:11:54 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-01 15:11:54 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3595 ms
-2025-03-01 15:11:54 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-01 15:11:54 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-03-01 15:11:55 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-01 15:11:55 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-01 15:11:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-01 15:11:56 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 28P01
-2025-03-01 15:11:56 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - FATAL: password authentication failed for user "postgres"
-2025-03-01 15:11:56 [restartedMain] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
-org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [FATAL: password authentication failed for user "postgres"] [n/a]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1711)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1460)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1606)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1606)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4467)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:520)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at com.chandu.fleet.FleetApplication.main(FleetApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
-	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:704)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:213)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
-	at org.postgresql.Driver.makeConnection(Driver.java:446)
-	at org.postgresql.Driver.connect(Driver.java:298)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
-	... 124 common frames omitted
-2025-03-01 15:11:56 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-01 15:11:56 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
-	Database driver: undefined/unknown
-	Database version: 12.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-01 15:11:58 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-01 15:11:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-01 15:11:59 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 28P01
-2025-03-01 15:11:59 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - FATAL: password authentication failed for user "postgres"
-2025-03-01 15:11:59 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "postgres"] [n/a]
-2025-03-01 15:11:59 [restartedMain] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthFilter': Unsatisfied dependency expressed through field 'employeeInfoUserDetailsService': Error creating bean with name 'employeeInfoUserDetailsService': Unsatisfied dependency expressed through field 'employeeRepository': Error creating bean with name 'employeeRepository' defined in com.chandu.fleet.repository.EmployeeRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-2025-03-01 15:11:59 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2025-03-01 15:11:59 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2025-03-01 15:11:59 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-03-01 15:11:59 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at com.chandu.fleet.FleetApplication.main(FleetApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:520)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
-	... 13 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter': Unsatisfied dependency expressed through field 'employeeInfoUserDetailsService': Error creating bean with name 'employeeInfoUserDetailsService': Unsatisfied dependency expressed through field 'employeeRepository': Error creating bean with name 'employeeRepository' defined in com.chandu.fleet.repository.EmployeeRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4467)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
-	... 18 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'employeeInfoUserDetailsService': Unsatisfied dependency expressed through field 'employeeRepository': Error creating bean with name 'employeeRepository' defined in com.chandu.fleet.repository.EmployeeRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1606)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
-	... 60 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'employeeRepository' defined in com.chandu.fleet.repository.EmployeeRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1711)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1460)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1606)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
-	... 73 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
-	... 85 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "postgres"] [n/a]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
-	... 97 common frames omitted
-Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "postgres"] [n/a]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
-	... 104 common frames omitted
-Caused by: org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "postgres"] [n/a]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
-	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
-	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
-	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:39)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:93)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
-	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
-	... 108 common frames omitted
-Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
-	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:704)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:213)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
-	at org.postgresql.Driver.makeConnection(Driver.java:446)
-	at org.postgresql.Driver.connect(Driver.java:298)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
-	... 128 common frames omitted
-2025-03-01 15:15:29 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.12 with PID 17624 (C:\Users\chand\Desktop\Loan-Management-\target\classes started by chand in C:\Users\chand\Desktop\Loan-Management-)
-2025-03-01 15:15:29 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-03-01 15:15:29 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev2"
-2025-03-01 15:15:29 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-03-01 15:15:29 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-03-01 15:15:30 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 7 ms.
-2025-03-01 15:15:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-01 15:15:31 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 5 JPA repository interfaces.
-2025-03-01 15:15:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-03-01 15:15:32 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-03-01 15:15:32 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-01 15:15:32 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-03-01 15:15:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3739 ms
-2025-03-01 15:15:33 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-01 15:15:33 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-03-01 15:15:34 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-03-01 15:15:34 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-01 15:15:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-03-01 15:15:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ef39146
-2025-03-01 15:15:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-03-01 15:15:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-01 15:15:35 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-03-06 18:51:56 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.11 with PID 14464 (C:\Users\chand\Desktop\Projects\Fleet\target\classes started by chand in C:\Users\chand\Desktop\Projects\Fleet)
+2025-03-06 18:51:56 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06 18:51:56 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev1"
+2025-03-06 18:51:57 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 18:51:57 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 18:51:59 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 14 ms.
+2025-03-06 18:52:00 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 18:52:00 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 5 JPA repository interfaces.
+2025-03-06 18:52:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-06 18:52:03 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-06 18:52:03 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06 18:52:03 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-06 18:52:03 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6298 ms
+2025-03-06 18:52:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 18:52:05 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-06 18:52:05 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 18:52:06 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 18:52:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-06 18:52:07 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@18ecb0b4
+2025-03-06 18:52:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-06 18:52:07 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-06 18:52:07 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
-	Database version: 16.4
+	Database version: 17.2
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-01 15:15:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - create table bank_accounts (id bigint generated by default as identity, aadhar varchar(255) not null, account_number varchar(255) not null, dob varchar(255) not null, first_name varchar(255) not null, ifsc_code varchar(255) not null, last_name varchar(255) not null, pan varchar(255) not null, primary key (id))
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - create table employees (id bigint not null, password varchar(255), roles varchar(255), username varchar(255), primary key (id))
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - create table fleet_loan_repayments (id bigint generated by default as identity, amount_paid float(53) not null, late_payment boolean not null, payment_date timestamp(6) not null, penalty_amount float(53) not null, loan_id bigint not null, primary key (id))
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - create table fleet_loans (id bigint generated by default as identity, account_number varchar(255) not null, interest_rate float(53) not null, loan_amount float(53) not null, loan_term integer not null, monthly_emi float(53) not null, remaining_balance float(53) not null, status varchar(255) not null check (status in ('PENDING','APPROVED','REJECTED','CLOSED')), vehicle_details varchar(255) not null, primary key (id))
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - create table hr_info (sno integer not null, company varchar(255), email varchar(255), name varchar(255), title varchar(255), primary key (sno))
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists bank_accounts drop constraint if exists UK214vcoy2l5jp715cpc9envt9p
-2025-03-01 15:15:36 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-03-01 15:15:36 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk214vcoy2l5jp715cpc9envt9p" of relation "bank_accounts" does not exist, skipping
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists bank_accounts add constraint UK214vcoy2l5jp715cpc9envt9p unique (aadhar)
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists bank_accounts drop constraint if exists UKr9gi1et82prjsig51uqxj2qm6
-2025-03-01 15:15:36 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-03-01 15:15:36 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "ukr9gi1et82prjsig51uqxj2qm6" of relation "bank_accounts" does not exist, skipping
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists bank_accounts add constraint UKr9gi1et82prjsig51uqxj2qm6 unique (account_number)
-2025-03-01 15:15:36 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists bank_accounts drop constraint if exists UK1tf71um3v84ieqtmll3hqvqey
-2025-03-01 15:15:37 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-03-01 15:15:37 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk1tf71um3v84ieqtmll3hqvqey" of relation "bank_accounts" does not exist, skipping
-2025-03-01 15:15:37 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists bank_accounts add constraint UK1tf71um3v84ieqtmll3hqvqey unique (pan)
-2025-03-01 15:15:37 [restartedMain] DEBUG org.hibernate.SQL - create sequence employees_seq start with 1 increment by 50
-2025-03-01 15:15:37 [restartedMain] DEBUG org.hibernate.SQL - alter table if exists fleet_loan_repayments add constraint FKoumrnwj4tgxnv3xjmgncqbcsb foreign key (loan_id) references fleet_loans
-2025-03-01 15:15:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-01 15:15:37 [restartedMain] DEBUG c.chandu.fleet.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
-2025-03-01 15:15:38 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-03-01 15:15:38 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-03-01 15:15:38 [restartedMain] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: POSTGRES
-2025-03-01 15:15:38 [restartedMain] INFO  o.s.b.c.l.s.TaskExecutorJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
-2025-03-01 15:15:38 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-01 15:15:39 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
-2025-03-01 15:15:40 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2025-03-01 15:15:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-03-01 15:15:40 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Started FleetApplication in 12.345 seconds (process running for 13.132)
-2025-03-01 15:16:30 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-03-01 15:16:30 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-03-01 15:16:30 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-01 15:16:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-03-01 15:16:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-06 18:52:09 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 18:52:10 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:52:12 [restartedMain] DEBUG c.chandu.fleet.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-03-06 18:52:12 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-06 18:52:12 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-03-06 18:52:12 [restartedMain] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: POSTGRES
+2025-03-06 18:52:12 [restartedMain] INFO  o.s.b.c.l.s.TaskExecutorJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-03-06 18:52:13 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06 18:52:15 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2025-03-06 18:52:16 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-06 18:52:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-06 18:52:16 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Started FleetApplication in 20.719 seconds (process running for 26.311)
+2025-03-06 18:52:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06 18:52:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-06 18:52:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-06 18:52:36 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:54:40 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:54:40 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select ba1_0.id,ba1_0.aadhar,ba1_0.account_number,ba1_0.dob,ba1_0.first_name,ba1_0.ifsc_code,ba1_0.last_name,ba1_0.pan from bank_accounts ba1_0
+2025-03-06 18:55:31 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06 18:55:32 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-06 18:55:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:55:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-06 18:55:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-06 18:55:37 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.11 with PID 21180 (C:\Users\chand\Desktop\Projects\Fleet\target\classes started by chand in C:\Users\chand\Desktop\Projects\Fleet)
+2025-03-06 18:55:37 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06 18:55:37 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev1"
+2025-03-06 18:55:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 18:55:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 18:55:38 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 14 ms.
+2025-03-06 18:55:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 18:55:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 179 ms. Found 5 JPA repository interfaces.
+2025-03-06 18:55:42 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-06 18:55:42 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-06 18:55:42 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06 18:55:42 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-06 18:55:42 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5657 ms
+2025-03-06 18:55:44 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 18:55:44 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-06 18:55:44 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 18:55:45 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 18:55:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-06 18:55:46 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@9958ccf
+2025-03-06 18:55:46 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-06 18:55:46 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-06 18:55:46 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-06 18:55:48 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 18:55:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:55:50 [restartedMain] DEBUG c.chandu.fleet.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-03-06 18:55:51 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-06 18:55:51 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-03-06 18:55:51 [restartedMain] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: POSTGRES
+2025-03-06 18:55:51 [restartedMain] INFO  o.s.b.c.l.s.TaskExecutorJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-03-06 18:55:51 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06 18:55:54 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2025-03-06 18:55:56 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-06 18:55:56 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-06 18:55:56 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Started FleetApplication in 20.77 seconds (process running for 22.477)
+2025-03-06 18:56:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06 18:56:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-06 18:56:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-06 18:56:01 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:56:15 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select ba1_0.id,ba1_0.aadhar,ba1_0.account_number,ba1_0.dob,ba1_0.first_name,ba1_0.ifsc_code,ba1_0.last_name,ba1_0.pan from bank_accounts ba1_0
+2025-03-06 18:56:37 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06 18:56:38 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-06 18:56:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:56:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-06 18:56:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-06 18:56:42 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.11 with PID 23692 (C:\Users\chand\Desktop\Projects\Fleet\target\classes started by chand in C:\Users\chand\Desktop\Projects\Fleet)
+2025-03-06 18:56:42 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06 18:56:42 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev1"
+2025-03-06 18:56:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 18:56:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 18:56:44 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 13 ms.
+2025-03-06 18:56:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 18:56:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 172 ms. Found 5 JPA repository interfaces.
+2025-03-06 18:56:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-06 18:56:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-06 18:56:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06 18:56:48 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-06 18:56:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5879 ms
+2025-03-06 18:56:50 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 18:56:50 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-06 18:56:50 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 18:56:51 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 18:56:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-06 18:56:52 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77061c74
+2025-03-06 18:56:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-06 18:56:52 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-06 18:56:52 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-06 18:56:54 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 18:56:55 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:56:56 [restartedMain] DEBUG c.chandu.fleet.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-03-06 18:56:56 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-06 18:56:56 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-03-06 18:56:56 [restartedMain] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: POSTGRES
+2025-03-06 18:56:57 [restartedMain] INFO  o.s.b.c.l.s.TaskExecutorJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-03-06 18:56:57 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06 18:56:59 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2025-03-06 18:57:01 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-06 18:57:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-06 18:57:01 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Started FleetApplication in 19.694 seconds (process running for 20.789)
+2025-03-06 18:57:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06 18:57:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-06 18:57:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-06 18:57:36 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:57:41 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select ba1_0.id,ba1_0.aadhar,ba1_0.account_number,ba1_0.dob,ba1_0.first_name,ba1_0.ifsc_code,ba1_0.last_name,ba1_0.pan from bank_accounts ba1_0
+2025-03-06 18:58:43 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:59:03 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:59:12 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 18:59:21 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06 18:59:22 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-06 18:59:22 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:59:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-06 18:59:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-06 18:59:26 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.11 with PID 27740 (C:\Users\chand\Desktop\Projects\Fleet\target\classes started by chand in C:\Users\chand\Desktop\Projects\Fleet)
+2025-03-06 18:59:26 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06 18:59:26 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev1"
+2025-03-06 18:59:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 18:59:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 18:59:27 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 15 ms.
+2025-03-06 18:59:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 18:59:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 155 ms. Found 5 JPA repository interfaces.
+2025-03-06 18:59:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-06 18:59:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5492 ms
+2025-03-06 18:59:33 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 18:59:33 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-06 18:59:33 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 18:59:34 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 18:59:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-06 18:59:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f4440d0
+2025-03-06 18:59:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-06 18:59:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-06 18:59:35 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-06 18:59:37 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 18:59:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:59:41 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.11 with PID 19328 (C:\Users\chand\Desktop\Projects\Fleet\target\classes started by chand in C:\Users\chand\Desktop\Projects\Fleet)
+2025-03-06 18:59:41 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06 18:59:41 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev1"
+2025-03-06 18:59:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 18:59:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 18:59:42 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 20 ms.
+2025-03-06 18:59:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 18:59:44 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 5 JPA repository interfaces.
+2025-03-06 18:59:46 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-06 18:59:46 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-06 18:59:46 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06 18:59:46 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-06 18:59:46 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5446 ms
+2025-03-06 18:59:48 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 18:59:48 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-06 18:59:48 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 18:59:49 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 18:59:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-06 18:59:49 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74feb75
+2025-03-06 18:59:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-06 18:59:49 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-06 18:59:49 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-06 18:59:52 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 18:59:52 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 18:59:53 [restartedMain] DEBUG c.chandu.fleet.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-03-06 18:59:54 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-06 18:59:54 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-03-06 18:59:54 [restartedMain] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: POSTGRES
+2025-03-06 18:59:54 [restartedMain] INFO  o.s.b.c.l.s.TaskExecutorJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-03-06 18:59:54 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06 18:59:56 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2025-03-06 18:59:57 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-06 18:59:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-06 18:59:58 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Started FleetApplication in 17.859 seconds (process running for 18.833)
+2025-03-06 19:00:04 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06 19:00:04 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-06 19:00:04 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-06 19:00:04 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 19:00:14 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 19:00:22 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 19:01:03 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 19:01:03 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select ba1_0.id,ba1_0.aadhar,ba1_0.account_number,ba1_0.dob,ba1_0.first_name,ba1_0.ifsc_code,ba1_0.last_name,ba1_0.pan from bank_accounts ba1_0 where ba1_0.account_number=?
+2025-03-06 19:01:03 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.chandu.fleet.exception.BankAccountNotFound: Bank Account not found! with this account number : bc5ba663-bs]
+2025-03-06 19:01:10 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 19:01:10 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select ba1_0.id,ba1_0.aadhar,ba1_0.account_number,ba1_0.dob,ba1_0.first_name,ba1_0.ifsc_code,ba1_0.last_name,ba1_0.pan from bank_accounts ba1_0 where ba1_0.account_number=?
+2025-03-06 19:01:41 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06 19:01:41 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-06 19:01:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 19:01:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-06 19:01:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-06 19:01:45 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Starting FleetApplication using Java 17.0.11 with PID 7804 (C:\Users\chand\Desktop\Projects\Fleet\target\classes started by chand in C:\Users\chand\Desktop\Projects\Fleet)
+2025-03-06 19:01:45 [restartedMain] DEBUG com.chandu.fleet.FleetApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-06 19:01:45 [restartedMain] INFO  com.chandu.fleet.FleetApplication - The following 1 profile is active: "Dev1"
+2025-03-06 19:01:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-06 19:01:45 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-06 19:01:47 [restartedMain] INFO  o.s.b.c.c.annotation.BatchRegistrar - Finished Spring Batch infrastructure beans configuration in 40 ms.
+2025-03-06 19:01:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 19:01:48 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 544 ms. Found 5 JPA repository interfaces.
+2025-03-06 19:01:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-06 19:01:52 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-06 19:01:52 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-06 19:01:52 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-06 19:01:52 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7284 ms
+2025-03-06 19:01:54 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 19:01:55 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-06 19:01:55 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-06 19:01:56 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 19:01:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-06 19:01:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ffc5442
+2025-03-06 19:01:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-06 19:01:57 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-06 19:01:58 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-06 19:02:02 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 19:02:02 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 19:02:04 [restartedMain] DEBUG c.chandu.fleet.filter.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-03-06 19:02:04 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-03-06 19:02:04 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-03-06 19:02:05 [restartedMain] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: POSTGRES
+2025-03-06 19:02:05 [restartedMain] INFO  o.s.b.c.l.s.TaskExecutorJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-03-06 19:02:05 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06 19:02:08 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2025-03-06 19:02:10 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-06 19:02:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-03-06 19:02:10 [restartedMain] INFO  com.chandu.fleet.FleetApplication - Started FleetApplication in 26.421 seconds (process running for 27.523)
+2025-03-06 19:02:22 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06 19:02:22 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-06 19:02:22 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-06 19:02:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select e1_0.id,e1_0.password,e1_0.roles,e1_0.username from employees e1_0 where e1_0.username=?
+2025-03-06 19:02:54 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select ba1_0.id,ba1_0.aadhar,ba1_0.account_number,ba1_0.dob,ba1_0.first_name,ba1_0.ifsc_code,ba1_0.last_name,ba1_0.pan from bank_accounts ba1_0 where ba1_0.account_number=?
+2025-03-06 19:06:37 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-06 19:06:37 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-06 19:06:37 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 19:06:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-06 19:06:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
